@@ -108,6 +108,7 @@ public class DefaultNamedDomainObjectCollection<T> extends DefaultDomainObjectCo
     @Override
     public boolean add(final T o) {
         assertMutable("add(T)");
+        assertCanAdd(o);
         return add(o, getEventRegister().getAddActions());
     }
 
